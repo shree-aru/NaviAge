@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NaviAge AI — Your Friendly Technology Companion</title>
+  <meta name="description" content="NaviAge AI helps senior citizens navigate technology with confidence through an AI assistant, step-by-step tutorials, scam detection training, and quick help guides.">
+  <meta name="theme-color" content="#2563EB">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤝</text></svg>">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/accessibility.css">
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+  <!-- ═══════════════════════════════════════════
+       HEADER
+       ═══════════════════════════════════════════ -->
+  <header class="header" id="main-header">
+    <div class="header-logo">
+      <div class="logo-icon">🤝</div>
+      <span>NaviAge <span style="color: var(--color-primary);">AI</span></span>
+    </div>
+    <div class="header-actions">
+      <button class="btn btn-ghost btn-sm" id="accessibility-toggle-btn" aria-label="Accessibility Settings" data-tooltip="Settings">
+        <i data-lucide="settings" style="width:22px;height:22px;"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       MAIN CONTENT
+       ═══════════════════════════════════════════ -->
+  <main class="main-content">
+
+    <!-- ═══ HOME PAGE ═══ -->
+    <div class="page active" id="page-home">
+      <div class="container">
+        <section class="hero">
+          <div class="hero-badge">
+            <span>✨</span>
+            <span>Your Friendly Tech Companion</span>
+          </div>
+          <h1>
+            Technology Made<br>
+            <span class="gradient-text">Simple & Friendly</span>
+          </h1>
+          <p class="hero-subtitle">
+            Learn to use your phone, tablet, or computer with confidence. 
+            Ask our AI assistant anything — no question is too simple!
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-primary btn-lg" onclick="NaviAge.navigateTo('assistant')">
+              <i data-lucide="message-circle" class="icon"></i>
+              Talk to AI Assistant
+            </button>
+            <button class="btn btn-secondary btn-lg" onclick="NaviAge.navigateTo('tutorials')">
+              <i data-lucide="book-open" class="icon"></i>
+              Start Learning
+            </button>
+          </div>
+        </section>
+
+        <!-- Feature Cards -->
+        <section class="section" id="features-section">
+          <div class="section-header">
+            <h2>How Can We Help You Today?</h2>
+            <p>Choose what you'd like to do — everything is designed to be easy and friendly.</p>
+          </div>
+          <div class="features-grid">
+            <!-- AI Assistant Card -->
+            <div class="card card-hover feature-card animate-fade-in-up" onclick="NaviAge.navigateTo('assistant')" style="opacity:0" id="feature-ai">
+              <div class="card-icon blue">💬</div>
+              <h3 class="card-title">AI Tech Assistant</h3>
+              <p class="card-description">
+                Ask any technology question in plain English. Our friendly AI explains everything step by step, just like a patient friend would.
+              </p>
+              <span class="badge badge-primary" style="margin-top: var(--space-4);">Powered by AI</span>
+            </div>
+
+            <!-- Tutorials Card -->
+            <div class="card card-hover feature-card animate-fade-in-up delay-1" onclick="NaviAge.navigateTo('tutorials')" style="opacity:0" id="feature-tutorials">
+              <div class="card-icon purple">📖</div>
+              <h3 class="card-title">Step-by-Step Tutorials</h3>
+              <p class="card-description">
+                Learn how to video call your family, send photos, browse the internet, and more with easy picture guides.
+              </p>
+              <span class="badge badge-primary" style="margin-top: var(--space-4);">Visual Guides</span>
+            </div>
+
+            <!-- Scam Trainer Card -->
+            <div class="card card-hover feature-card animate-fade-in-up delay-2" onclick="NaviAge.navigateTo('scam-trainer')" style="opacity:0" id="feature-scam">
+              <div class="card-icon red">🛡️</div>
+              <h3 class="card-title">Scam Detection Trainer</h3>
+              <p class="card-description">
+                Practice spotting fake emails, suspicious calls, and online scams in a safe environment. Stay protected!
+              </p>
+              <span class="badge badge-danger" style="margin-top: var(--space-4);">Stay Safe</span>
+            </div>
+
+            <!-- Quick Help Card -->
+            <div class="card card-hover feature-card animate-fade-in-up delay-3" onclick="NaviAge.navigateTo('help')" style="opacity:0" id="feature-help">
+              <div class="card-icon green">🆘</div>
+              <h3 class="card-title">Quick Help Cards</h3>
+              <p class="card-description">
+                Screen frozen? No sound? Can't connect to WiFi? Get instant 3-step solutions to common problems.
+              </p>
+              <span class="badge badge-success" style="margin-top: var(--space-4);">Instant Fix</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Quick Questions -->
+        <section class="quick-actions animate-fade-in-up delay-4" style="opacity:0">
+          <div class="quick-actions-title">
+            <span>🎯</span>
+            Popular Questions — Tap to Ask AI
+          </div>
+          <div class="quick-actions-grid">
+            <button class="tag" onclick="NaviAge.askQuickQuestion('How do I make a video call to my family?')">📹 How to video call?</button>
+            <button class="tag" onclick="NaviAge.askQuickQuestion('How do I send a photo through text message?')">📸 Send a photo</button>
+            <button class="tag" onclick="NaviAge.askQuickQuestion('How do I make the text bigger on my screen?')">🔍 Make text bigger</button>
+            <button class="tag" onclick="NaviAge.askQuickQuestion('What is WiFi and how do I connect to it?')">📶 What is WiFi?</button>
+            <button class="tag" onclick="NaviAge.askQuickQuestion('How do I set up email on my phone?')">📧 Set up email</button>
+            <button class="tag" onclick="NaviAge.askQuickQuestion('How can I tell if a message is a scam?')">🛡️ Spot a scam</button>
+            <button class="tag" onclick="NaviAge.askQuickQuestion('How do I use Google Maps to find directions?')">🗺️ Use Google Maps</button>
+            <button class="tag" onclick="NaviAge.askQuickQuestion('How do I take a screenshot?')">📱 Take a screenshot</button>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- ═══ AI ASSISTANT PAGE ═══ -->
+    <div class="page" id="page-assistant">
+      <div class="chat-page">
+        <div class="chat-header">
+          <div class="chat-avatar">🤖</div>
+          <div class="chat-info">
+            <h3>NaviAge AI Assistant</h3>
+            <p>Always here to help</p>
+          </div>
+          <button class="btn btn-ghost btn-sm" onclick="NaviAge.AI.clearChat()" style="margin-left:auto;" aria-label="Clear chat">
+            <i data-lucide="trash-2" style="width:20px;height:20px;"></i>
+          </button>
+        </div>
+
+        <div class="chat-messages" id="chat-messages">
+          <!-- Welcome message -->
+          <div class="chat-bubble assistant">
+            <div class="bubble-label">
+              <span>🤖</span> NaviAge AI
+            </div>
+            Hello! I'm your friendly technology helper. 😊<br><br>
+            You can ask me anything about using your phone, tablet, or computer. There's no silly question — I'm here to help!<br><br>
+            <strong>Try asking me:</strong><br>
+            • "How do I send a photo to my grandchild?"<br>
+            • "What does WiFi mean?"<br>
+            • "How do I make the text bigger?"
+          </div>
+        </div>
+
+        <div class="chat-suggestions" id="chat-suggestions">
+          <button class="tag" onclick="NaviAge.askQuickQuestion('How do I make a video call?')">📹 Video call</button>
+          <button class="tag" onclick="NaviAge.askQuickQuestion('How do I send a photo?')">📸 Send photo</button>
+          <button class="tag" onclick="NaviAge.askQuickQuestion('What is WiFi?')">📶 WiFi help</button>
+          <button class="tag" onclick="NaviAge.askQuickQuestion('How do I use Google?')">🔍 Use Google</button>
+          <button class="tag" onclick="NaviAge.askQuickQuestion('How to spot a scam?')">🛡️ Spot scams</button>
+        </div>
+
+        <div class="chat-input-container">
+          <button class="btn btn-icon btn-ghost" id="voice-input-btn" onclick="NaviAge.Voice.toggleListening()" aria-label="Voice input">
+            <i data-lucide="mic" style="width:24px;height:24px;"></i>
+          </button>
+          <div class="chat-input-wrapper" style="flex:1;">
+            <input type="text" class="input-field" id="chat-input" placeholder="Type your question here..." aria-label="Type your question" autocomplete="off">
+          </div>
+          <button class="btn btn-primary btn-icon" id="chat-send-btn" onclick="NaviAge.AI.sendMessage()" aria-label="Send message">
+            <i data-lucide="send" style="width:22px;height:22px;"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ TUTORIALS PAGE ═══ -->
+    <div class="page" id="page-tutorials">
+      <div class="container">
+        <div class="tutorials-header">
+          <h2>📖 Step-by-Step Tutorials</h2>
+          <p style="font-size: var(--text-lg); color: var(--color-text-secondary); margin-top: var(--space-3);">
+            Learn at your own pace. Each lesson has clear pictures and simple instructions.
+          </p>
+        </div>
+
+        <!-- Device Tabs -->
+        <div class="device-tabs" id="device-tabs">
+          <button class="device-tab active" data-device="all" onclick="NaviAge.Tutorials.filterByDevice('all')">
+            <span>📱</span> All Devices
+          </button>
+          <button class="device-tab" data-device="phone" onclick="NaviAge.Tutorials.filterByDevice('phone')">
+            <span>📱</span> Phone
+          </button>
+          <button class="device-tab" data-device="tablet" onclick="NaviAge.Tutorials.filterByDevice('tablet')">
+            <span>📲</span> Tablet
+          </button>
+          <button class="device-tab" data-device="computer" onclick="NaviAge.Tutorials.filterByDevice('computer')">
+            <span>💻</span> Computer
+          </button>
+        </div>
+
+        <!-- Tutorial List View -->
+        <div class="tutorial-list" id="tutorial-list">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Tutorial Detail View (hidden by default) -->
+        <div class="tutorial-detail" id="tutorial-detail" style="display:none;">
+          <div class="tutorial-detail-header">
+            <button class="tutorial-back-btn" onclick="NaviAge.Tutorials.backToList()">
+              <i data-lucide="arrow-left" style="width:20px;height:20px;"></i>
+              Back to All Tutorials
+            </button>
+            <h2 id="tutorial-detail-title"></h2>
+            <p id="tutorial-detail-description" style="color: var(--color-text-secondary); margin-top: var(--space-2);"></p>
+            <div class="tutorial-progress" style="margin-top: var(--space-6);">
+              <div class="tutorial-progress-label">
+                <span id="tutorial-progress-text">Step 1 of 5</span>
+                <span id="tutorial-progress-percent">0%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" id="tutorial-progress-bar" style="width: 0%"></div>
+              </div>
+            </div>
+          </div>
+          <div id="tutorial-steps-container">
+            <!-- Steps injected by JS -->
+          </div>
+          <div class="tutorial-step-navigation">
+            <button class="btn btn-secondary" id="tutorial-prev-btn" onclick="NaviAge.Tutorials.prevStep()">
+              <i data-lucide="arrow-left" class="icon"></i> Previous
+            </button>
+            <button class="btn btn-primary" id="tutorial-next-btn" onclick="NaviAge.Tutorials.nextStep()">
+              Next <i data-lucide="arrow-right" class="icon"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SCAM TRAINER PAGE ═══ -->
+    <div class="page" id="page-scam-trainer">
+      <div class="container">
+        <div class="scam-page-header">
+          <h2>🛡️ Scam Detection Trainer</h2>
+          <p style="font-size: var(--text-lg); color: var(--color-text-secondary); margin-top: var(--space-3);">
+            Practice spotting scams in a safe environment. Learn the warning signs!
+          </p>
+          <div class="scam-stats" id="scam-stats">
+            <div class="stat-card">
+              <div class="stat-value" id="scam-score">0</div>
+              <div class="stat-label">Score</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value" id="scam-streak">0</div>
+              <div class="stat-label">Streak 🔥</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value" id="scam-total">0/0</div>
+              <div class="stat-label">Answered</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quiz Card -->
+        <div class="scam-quiz-card" id="scam-quiz-card">
+          <div class="scam-scenario" id="scam-scenario">
+            <!-- Populated by JS -->
+          </div>
+          <div class="scam-result" id="scam-result" style="display:none;">
+            <!-- Result shown after answer -->
+          </div>
+        </div>
+
+        <!-- AI Scam Checker -->
+        <div class="scam-checker">
+          <div class="scam-checker-card">
+            <h3 class="scam-checker-title">
+              <span>🤖</span> AI Scam Checker
+            </h3>
+            <p class="scam-checker-description">
+              Received a suspicious message? Paste it below and our AI will analyze it for you.
+            </p>
+            <textarea id="scam-checker-input" placeholder="Paste the suspicious email, text message, or describe the phone call here..."></textarea>
+            <button class="btn btn-primary" id="scam-check-btn" onclick="NaviAge.ScamTrainer.checkWithAI()">
+              <i data-lucide="scan" class="icon"></i>
+              Analyze for Scams
+            </button>
+            <div class="scam-ai-result" id="scam-ai-result" style="display:none;">
+              <!-- AI analysis result -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ QUICK HELP PAGE ═══ -->
+    <div class="page" id="page-help">
+      <div class="container">
+        <div class="help-page-header">
+          <h2>🆘 Quick Help</h2>
+          <p style="font-size: var(--text-lg); color: var(--color-text-secondary); margin-top: var(--space-3);">
+            Having a problem? Find a quick fix below. Tap a card to see the solution.
+          </p>
+        </div>
+
+        <div class="help-categories" id="help-categories">
+          <button class="device-tab active" data-category="all" onclick="NaviAge.Help.filterByCategory('all')">All</button>
+          <button class="device-tab" data-category="screen" onclick="NaviAge.Help.filterByCategory('screen')">🖥️ Screen</button>
+          <button class="device-tab" data-category="sound" onclick="NaviAge.Help.filterByCategory('sound')">🔊 Sound</button>
+          <button class="device-tab" data-category="internet" onclick="NaviAge.Help.filterByCategory('internet')">📶 Internet</button>
+          <button class="device-tab" data-category="apps" onclick="NaviAge.Help.filterByCategory('apps')">📱 Apps</button>
+          <button class="device-tab" data-category="security" onclick="NaviAge.Help.filterByCategory('security')">🔒 Security</button>
+        </div>
+
+        <div class="help-grid" id="help-grid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SETTINGS PAGE ═══ -->
+    <div class="page" id="page-settings">
+      <div class="container">
+        <div class="settings-page">
+          <h2 style="margin-bottom: var(--space-8);">⚙️ Settings</h2>
+
+          <!-- API Key Settings -->
+          <div class="settings-group" style="background: var(--color-danger-bg); border-left: 4px solid var(--color-danger);">
+            <h3 class="settings-group-title">
+              <i data-lucide="key" style="width:22px;height:22px;color:var(--color-danger);"></i>
+              Developer API Key
+            </h3>
+            <div class="settings-item" style="flex-direction: column; align-items: flex-start; gap: var(--space-3);">
+              <div>
+                <div class="settings-item-label">Google Gemini API Key</div>
+                <div class="settings-item-description">Required for AI Chat & Scam Detection. Your key is saved locally in this browser.</div>
+              </div>
+              <div style="display: flex; gap: 8px; width: 100%;">
+                <input type="password" id="api-key-input" class="input-field" placeholder="Paste your API key here..." style="flex: 1;">
+                <button class="btn btn-primary" onclick="NaviAge.AI.saveApiKey()">Save</button>
+              </div>
+              <div id="api-key-status" style="font-size: var(--text-sm); font-weight: 600; color: var(--color-success); display: none;">✅ Key Saved Successfully!</div>
+            </div>
+          </div>
+
+          <!-- Display Settings -->
+          <div class="settings-group">
+            <h3 class="settings-group-title">
+              <i data-lucide="eye" style="width:22px;height:22px;color:var(--color-primary);"></i>
+              Display
+            </h3>
+
+            <div class="settings-item">
+              <div>
+                <div class="settings-item-label">Text Size</div>
+                <div class="settings-item-description">Make everything bigger or smaller</div>
+              </div>
+              <div class="font-size-selector" id="font-size-selector">
+                <button class="font-size-option active" data-size="default" onclick="NaviAge.Accessibility.setFontSize('default')">A</button>
+                <button class="font-size-option" data-size="large" onclick="NaviAge.Accessibility.setFontSize('large')" style="font-size: 1.15em;">A</button>
+                <button class="font-size-option" data-size="xl" onclick="NaviAge.Accessibility.setFontSize('xl')" style="font-size: 1.3em;">A</button>
+                <button class="font-size-option" data-size="max" onclick="NaviAge.Accessibility.setFontSize('max')" style="font-size: 1.5em;">A</button>
+              </div>
+            </div>
+
+            <div class="settings-item">
+              <div>
+                <div class="settings-item-label">High Contrast Mode</div>
+                <div class="settings-item-description">Dark background with bright text for better visibility</div>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="high-contrast-toggle" onchange="NaviAge.Accessibility.toggleHighContrast()">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
+            <div class="settings-item">
+              <div>
+                <div class="settings-item-label">Reduce Animations</div>
+                <div class="settings-item-description">Turn off moving elements for a calmer experience</div>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="reduce-motion-toggle" onchange="NaviAge.Accessibility.toggleReducedMotion()">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Voice Settings -->
+          <div class="settings-group">
+            <h3 class="settings-group-title">
+              <i data-lucide="mic" style="width:22px;height:22px;color:var(--color-primary);"></i>
+              Voice
+            </h3>
+
+            <div class="settings-item">
+              <div>
+                <div class="settings-item-label">Voice Input</div>
+                <div class="settings-item-description">Speak your questions instead of typing</div>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="voice-enabled-toggle" checked onchange="NaviAge.Accessibility.toggleVoice()">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
+            <div class="settings-item">
+              <div>
+                <div class="settings-item-label">Read Answers Aloud</div>
+                <div class="settings-item-description">AI will speak the answers to you</div>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="tts-enabled-toggle" onchange="NaviAge.Accessibility.toggleTTS()">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <!-- About -->
+          <div class="settings-group">
+            <h3 class="settings-group-title">
+              <i data-lucide="info" style="width:22px;height:22px;color:var(--color-primary);"></i>
+              About
+            </h3>
+            <div style="padding: var(--space-4) 0;">
+              <p style="margin-bottom: var(--space-3);"><strong>NaviAge AI</strong> v1.0</p>
+              <p style="margin-bottom: var(--space-3);">Built with ❤️ for GenLink Hacks — helping senior citizens navigate technology with confidence.</p>
+              <p style="margin-bottom: 0; font-size: var(--text-sm); color: var(--color-text-muted);">
+                Powered by Google Gemini AI • Built with accessibility-first design
+              </p>
+            </div>
+          </div>
+
+          <!-- Reset -->
+          <div style="text-align: center; margin-top: var(--space-6);">
+            <button class="btn btn-ghost" onclick="NaviAge.Accessibility.resetAll()">
+              <i data-lucide="rotate-ccw" class="icon"></i>
+              Reset All Settings to Default
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       BOTTOM NAVIGATION
+       ═══════════════════════════════════════════ -->
+  <nav class="nav" id="main-nav" role="navigation" aria-label="Main navigation">
+    <button class="nav-item active" data-page="home" onclick="NaviAge.navigateTo('home')" aria-label="Home">
+      <span class="nav-icon"><i data-lucide="home" style="width:26px;height:26px;"></i></span>
+      <span class="nav-label">Home</span>
+    </button>
+    <button class="nav-item" data-page="assistant" onclick="NaviAge.navigateTo('assistant')" aria-label="AI Assistant">
+      <span class="nav-icon"><i data-lucide="message-circle" style="width:26px;height:26px;"></i></span>
+      <span class="nav-label">AI Chat</span>
+    </button>
+    <button class="nav-item" data-page="tutorials" onclick="NaviAge.navigateTo('tutorials')" aria-label="Tutorials">
+      <span class="nav-icon"><i data-lucide="book-open" style="width:26px;height:26px;"></i></span>
+      <span class="nav-label">Tutorials</span>
+    </button>
+    <button class="nav-item" data-page="scam-trainer" onclick="NaviAge.navigateTo('scam-trainer')" aria-label="Scam Trainer">
+      <span class="nav-icon"><i data-lucide="shield" style="width:26px;height:26px;"></i></span>
+      <span class="nav-label">Scam Quiz</span>
+    </button>
+    <button class="nav-item" data-page="help" onclick="NaviAge.navigateTo('help')" aria-label="Quick Help">
+      <span class="nav-icon"><i data-lucide="life-buoy" style="width:26px;height:26px;"></i></span>
+      <span class="nav-label">Help</span>
+    </button>
+    <button class="nav-item" data-page="settings" onclick="NaviAge.navigateTo('settings')" aria-label="Settings">
+      <span class="nav-icon"><i data-lucide="settings" style="width:26px;height:26px;"></i></span>
+      <span class="nav-label">Settings</span>
+    </button>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       SCRIPTS
+       ═══════════════════════════════════════════ -->
+  <script src="js/accessibility.js"></script>
+  <script src="js/voice.js"></script>
+  <script src="js/ai-assistant.js"></script>
+  <script src="js/tutorials.js"></script>
+  <script src="js/scam-trainer.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

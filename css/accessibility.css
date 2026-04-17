@@ -1,0 +1,213 @@
+/* ============================================
+   NaviAge AI — Accessibility Overrides
+   Font scaling, high contrast, reduced motion
+   ============================================ */
+
+/* ── Font Size Scales ── */
+/* Default is --font-scale: 1 (20px base) */
+
+/* Large: 1.15x */
+html.font-large {
+  --font-scale: 1.15;
+}
+
+/* Extra Large: 1.3x */
+html.font-xl {
+  --font-scale: 1.3;
+}
+
+/* Maximum: 1.5x */
+html.font-max {
+  --font-scale: 1.5;
+}
+
+/* ── High Contrast Mode ── */
+html.high-contrast {
+  --color-bg: #000000;
+  --color-surface: #1A1A1A;
+  --color-surface-hover: #2A2A2A;
+  --color-border: #555555;
+  --color-border-light: #333333;
+  --color-text: #FFFFFF;
+  --color-text-secondary: #E0E0E0;
+  --color-text-muted: #BBBBBB;
+
+  --color-primary: #5B9BFF;
+  --color-primary-light: #7DB3FF;
+  --color-primary-dark: #3D7FE6;
+  --color-primary-bg: #1A2744;
+
+  --color-secondary: #A78BFA;
+  --color-secondary-light: #C4B5FD;
+  --color-secondary-bg: #2D1F5E;
+
+  --color-success: #34D399;
+  --color-success-light: #6EE7B7;
+  --color-success-bg: #064E3B;
+
+  --color-warning: #FBBF24;
+  --color-warning-light: #FCD34D;
+  --color-warning-bg: #78350F;
+
+  --color-danger: #FB7185;
+  --color-danger-light: #FDA4AF;
+  --color-danger-bg: #7F1D1D;
+}
+
+html.high-contrast .header {
+  background: rgba(0, 0, 0, 0.95);
+  border-bottom-color: #555555;
+}
+
+html.high-contrast .nav {
+  background: #1A1A1A;
+  border-top-color: #555555;
+}
+
+html.high-contrast .btn-primary {
+  background: linear-gradient(135deg, #5B9BFF, #3D7FE6);
+}
+
+html.high-contrast .btn-secondary {
+  background: var(--color-surface);
+  border-color: #5B9BFF;
+  color: #5B9BFF;
+}
+
+html.high-contrast .chat-bubble.user {
+  background: linear-gradient(135deg, #5B9BFF, #3D7FE6);
+}
+
+html.high-contrast .chat-bubble.assistant {
+  background: #2A2A2A;
+  border-color: #555555;
+}
+
+html.high-contrast .scam-message-preview {
+  background: #0D0D0D;
+  border-color: #555555;
+}
+
+html.high-contrast a {
+  color: #7DB3FF;
+}
+
+html.high-contrast .tag {
+  background: #2A2A2A;
+  border-color: #555555;
+}
+
+html.high-contrast .tag:hover {
+  border-color: #5B9BFF;
+  color: #5B9BFF;
+  background: #1A2744;
+}
+
+html.high-contrast .device-tab {
+  background: #2A2A2A;
+  border-color: #555555;
+  color: #E0E0E0;
+}
+
+html.high-contrast .device-tab.active {
+  background: #5B9BFF;
+  border-color: #5B9BFF;
+  color: #000000;
+}
+
+html.high-contrast .help-card {
+  background: #1A1A1A;
+  border-color: #555555;
+}
+
+html.high-contrast .tutorial-card {
+  background: #1A1A1A;
+  border-color: #555555;
+}
+
+html.high-contrast .input-field {
+  background: #2A2A2A;
+  border-color: #555555;
+  color: #FFFFFF;
+}
+
+html.high-contrast .input-field:focus {
+  border-color: #5B9BFF;
+  box-shadow: 0 0 0 4px rgba(91, 155, 255, 0.2);
+}
+
+html.high-contrast .input-field::placeholder {
+  color: #999999;
+}
+
+html.high-contrast .settings-group {
+  background: #1A1A1A;
+  border-color: #555555;
+}
+
+html.high-contrast .scam-quiz-card {
+  background: #1A1A1A;
+  border-color: #555555;
+}
+
+html.high-contrast .scam-checker-card {
+  background: #1A1A1A;
+  border-color: #555555;
+}
+
+html.high-contrast .scam-checker textarea {
+  background: #2A2A2A;
+  border-color: #555555;
+  color: #FFFFFF;
+}
+
+html.high-contrast .quick-actions {
+  background: #1A1A1A;
+  border-color: #555555;
+}
+
+html.high-contrast .accordion-item {
+  background: #1A1A1A;
+  border-color: #555555;
+}
+
+html.high-contrast .modal {
+  background: #1A1A1A;
+}
+
+html.high-contrast ::-webkit-scrollbar-thumb {
+  background: #555555;
+}
+
+/* ── Print Styles ── */
+@media print {
+  .header, .nav, .chat-input-container, .chat-suggestions {
+    display: none !important;
+  }
+
+  .main-content {
+    padding-bottom: 0 !important;
+  }
+
+  .page {
+    display: block !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+    font-size: 14pt;
+  }
+
+  .card, .help-card, .scam-quiz-card {
+    break-inside: avoid;
+    border: 1px solid #ccc;
+    box-shadow: none;
+  }
+
+  .help-card-steps {
+    max-height: none !important;
+    opacity: 1 !important;
+    margin-top: 12px !important;
+  }
+}
